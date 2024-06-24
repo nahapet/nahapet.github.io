@@ -1,0 +1,370 @@
+@font-face {
+  font-family: Ampersand;
+  src: url(Ampersand.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: Inter;
+  src: url(Inter.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: Canela;
+  src: url(Canela.woff2) format("woff2");
+  font-display: swap;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 200vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  font-family: inherit;
+}
+h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+/* Header section */
+.top-content {
+  min-height: 100vh;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 1px;
+  background-color: white;
+  z-index: 2;
+}
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.name h1 {
+  font-family: "Ampersand", serif;
+  font-size: 115px;
+  line-height: 110px;
+  font-weight: 400;
+  margin: 0;
+}
+.name h2 {
+  font-family: "Ampersand", serif;
+  font-size: 80px;
+  line-height: 85px;
+  font-weight: 400;
+  margin: 0;
+}
+.name h3 {
+  margin: 0;
+  margin-top: 30px;
+}
+.hero {
+  background: url(sugary.jpg) no-repeat center top;
+  background-size: cover;
+  height: 300px;
+}
+
+/* About section */
+
+.about {
+  margin-top: 50px;
+  padding: 0 10%;
+  min-height: 100vh;
+}
+.about h3 {
+  margin: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgb(55, 65, 71);
+}
+.about .superpower {
+  margin-top: 20px;
+  font-family: "Canela", serif;
+  width: 90%;
+  font-size: 50px;
+}
+.about .bio {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.polaroid {
+  padding: 10px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.about .bio-text {
+  padding-left: 30px;
+}
+.text {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  margin-bottom: 20px;
+}
+
+/* Tooltip */
+
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  bottom: 125%;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: nowrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-5px);
+}
+.info-icon {
+  display: inline-block;
+  margin-left: 2px;
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: super;
+  background: #333;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  line-height: 10px;
+}
+
+/* Media coverage scroller section */
+
+.media-coverage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.media-coverage .header {
+  position: fixed;
+  bottom: 10%;
+  left: 10%;
+  padding: 20px;
+  font-family: "Canela", serif;
+  width: 70%;
+  font-size: 50px;
+  z-index: 3;
+  color: white;
+  background-color: rgb(233, 124, 8);
+}
+
+.scroller-wrapper {
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 20px; /* Add some space between scrollers */
+}
+.scroller {
+  display: flex;
+  animation: scroll 45s linear infinite; /* Slowed down animation */
+}
+.scroller img {
+  height: 40px;
+  margin: 10px;
+}
+.scroller a {
+  display: inline-block;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Experience section */
+
+.experience {
+  position: relative;
+  background: white;
+  margin-top: 100vh;
+  padding: 50px 10%;
+  z-index: 2;
+}
+.experience h3 {
+  margin: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgb(55, 65, 71);
+}
+.experience .timeline {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.experience .timeline-row {
+  display: flex;
+}
+.experience .timeline-row .text {
+  flex-grow: 1;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.experience .timeline-row .company {
+  margin-left: 50px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Services section */
+
+.services h3 {
+  margin: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid white;
+  color: white;
+}
+.services {
+  position: relative;
+  padding: 50px 10%;
+  background-color: rgb(26, 83, 212);
+  z-index: 3;
+}
+.services .service-grid {
+  display: flex;
+  flex-direction: column;
+}
+.services .service-row {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+}
+.services .service-description {
+  flex: 1;
+  padding-right: 30px;
+}
+.services .service-description-right {
+  padding-left: 50px;
+  flex: 1;
+}
+.services .service-name {
+  color: white;
+  font-family: "Canela", serif;
+  font-size: 50px;
+}
+.services .circle {
+  border-radius: 50%;
+}
+
+/* Contact section */
+
+.contact h3 {
+  margin: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgb(55, 65, 71);
+}
+.contact {
+  position: relative;
+  padding: 50px 10%;
+  background-color: white;
+  z-index: 3;
+}
+.contact-form {
+  margin: 30px auto;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+}
+.contact-form fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 0;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  background: #f9f9f9;
+  border: none;
+  font-size: 16px;
+  resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 1px solid #d1d1d1;
+}
+
+.contact-form input[type="submit"] {
+  margin-top: 20px;
+  width: auto;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+}
+.socials a {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  text-decoration: none;
+  padding: 0 5px;
+}
