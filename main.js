@@ -31,7 +31,8 @@ function handlePortrait() {
   });
 }
 
-// Transition should start when top of header is exposed to 100px from top of screen
+// Transition should start when top of header is exposed
+// Finish 100px before next section appears
 function handleMediaScroller() {
   const windowHeight = window.innerHeight;
   const topContent = document.querySelector(".top-content");
@@ -50,13 +51,14 @@ function handleMediaScroller() {
   );
   const hidden =
     experienceRect.top <= 0 || topContentRect.bottom >= windowHeight;
+  const mediaContainer = document.querySelector(".media-coverage");
   const mediaSection = document.querySelector(".media-coverage-logos");
   if (hidden) {
-    mediaSection.style.visibility = "hidden";
+    mediaContainer.style.visibility = "hidden";
   } else {
     mediaSection.style.filter = `blur(${(1 - scrollPercent) * 20}px)`;
     mediaSection.style.opacity = `${scrollPercent}`;
-    mediaSection.style.visibility = "visible";
+    mediaContainer.style.visibility = "visible";
   }
 }
 
@@ -156,7 +158,7 @@ function createRow(randLinks) {
 function addToScroller() {
   const mediaSection = document.querySelector(".media-coverage-logos");
   mediaSection.innerHTML = "";
-  const windowHeight = window.outerHeight;
+  const windowHeight = window.innerHeight;
   const rows = windowHeight / 50;
   for (let i = 0; i < rows; i++) {
     const randLinks = getRandomElements(links);
