@@ -47,6 +47,22 @@ h3 {
   padding-bottom: 30px;
 }
 
+.big-font {
+  font-size: 45px;
+}
+
+@media (max-width: 425px) {
+  .big-font {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 900px) {
+  .big-font {
+    font-size: 35px;
+  }
+}
+
 /* Header section */
 .top-content {
   position: relative;
@@ -63,14 +79,14 @@ h3 {
 .name h1 {
   font-family: "Ampersand", serif;
   font-size: 115px;
-  line-height: 110px;
+  line-height: 0.95;
   font-weight: 400;
   margin: 0;
 }
 .name h2 {
   font-family: "Ampersand", serif;
   font-size: 80px;
-  line-height: 85px;
+  line-height: 0.95;
   font-weight: 400;
   margin: 0;
 }
@@ -78,6 +94,8 @@ h3 {
   margin: 0;
   margin-top: 20px;
   margin-bottom: 30px;
+  padding: 0 20px;
+  text-align: center;
 }
 .hero {
   background: url(sugary.jpg) no-repeat center top;
@@ -85,10 +103,28 @@ h3 {
   height: 300px;
 }
 
+@media (max-width: 425px) {
+  .name h1 {
+    font-size: 60px;
+  }
+  .name h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+}
+@media (min-width: 426px) and (max-width: 900px) {
+  .name h1 {
+    font-size: 90px;
+  }
+  .name h2 {
+    font-size: 60px;
+  }
+}
+
 /* About section */
 
-/* .about {
-} */
 .about h3 {
   margin: 0;
   padding-bottom: 16px;
@@ -98,20 +134,34 @@ h3 {
   margin-top: 20px;
   font-family: "Canela", serif;
   width: 90%;
-  font-size: 50px;
 }
 .about .bio {
   display: flex;
   margin-top: 30px;
-  margin-bottom: 50px;
 }
 .polaroid {
   padding: 10px;
   background: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+.grower {
+  flex-grow: 1;
+}
 .about .bio-text {
   padding-left: 30px;
+}
+@media (max-width: 900px) {
+  .about .bio {
+    flex-direction: column-reverse;
+  }
+  .about .bio-text {
+    padding-left: 0;
+  }
+  .headshot-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
 }
 .text {
   font-family: "Inter", sans-serif;
@@ -176,6 +226,7 @@ h3 {
 }
 .media-coverage .header-container {
   display: flex;
+  padding: 0 10%;
   justify-content: center;
   position: fixed;
   bottom: 10%;
@@ -188,7 +239,6 @@ h3 {
   max-width: 900px;
   padding: 20px;
   font-family: "Canela", serif;
-  font-size: 50px;
   z-index: 3;
   color: white;
   background-color: rgb(233, 124, 8);
@@ -206,6 +256,12 @@ h3 {
 .scroller img {
   height: 40px;
   margin: 10px;
+}
+@media (max-width: 900px) {
+  .scroller img {
+    height: 20px;
+    margin: 5px;
+  }
 }
 .scroller a {
   display: inline-block;
@@ -239,15 +295,10 @@ h3 {
 .experience .timeline-row {
   display: flex;
 }
-.experience .timeline-row .text {
-  flex-grow: 1;
-  margin-top: 12px;
-  margin-bottom: 12px;
-}
 .experience .timeline-row .company {
   margin-left: 50px;
   font-family: "Inter", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
   display: flex;
   flex-direction: column;
@@ -255,6 +306,20 @@ h3 {
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
+}
+.experience .timeline-row .text {
+  flex-grow: 1;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+@media (max-width: 900px) {
+  .experience .timeline-row {
+    flex-direction: column-reverse;
+  }
+  .experience .timeline-row .company {
+    margin-left: 0;
+    align-items: flex-start;
+  }
 }
 
 /* Services section */
@@ -281,17 +346,87 @@ h3 {
   flex: 1;
   padding-right: 30px;
 }
-.services .service-description-right {
+.services .service-row-right .service-description {
   padding-left: 50px;
   flex: 1;
 }
 .services .service-name {
   color: white;
   font-family: "Canela", serif;
-  font-size: 50px;
 }
-.services .circle {
-  border-radius: 50%;
+@media (max-width: 525px) {
+  .services .polaroid-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+  .services .service-row {
+    flex-direction: column-reverse;
+  }
+  .services .service-row-right {
+    flex-direction: column;
+  }
+  .services .service-row-right .polaroid-container {
+    justify-content: flex-end;
+  }
+  .services .service-row-right .service-name {
+    text-align: right;
+  }
+  .services .service-description {
+    padding: 0;
+  }
+  .services .service-row-right .service-description {
+    padding: 0;
+  }
+  .polaroid2 {
+    padding: 8px;
+    width: calc(0.8 * 285px);
+    height: calc(0.8 * 274px);
+  }
+  .polaroid3 {
+    padding: 8px;
+    width: calc(0.8 * 250px);
+    height: calc(0.8 * 205px);
+  }
+  .polaroid4 {
+    padding: 8px;
+    width: calc(0.8 * 250px);
+    height: calc(0.8 * 285px);
+  }
+}
+@media (min-width: 526px) and (max-width: 700px) {
+  .polaroid2 {
+    padding: 6px;
+    width: calc(0.6 * 285px);
+    height: calc(0.6 * 274px);
+  }
+  .polaroid3 {
+    padding: 6px;
+    width: calc(0.6 * 250px);
+    height: calc(0.6 * 205px);
+  }
+  .polaroid4 {
+    padding: 6px;
+    width: calc(0.6 * 250px);
+    height: calc(0.6 * 285px);
+  }
+}
+@media (min-width: 701px) and (max-width: 900px) {
+  .polaroid2 {
+    padding: 8px;
+    width: calc(0.8 * 285px);
+    height: calc(0.8 * 274px);
+  }
+  .polaroid3 {
+    padding: 8px;
+    width: calc(0.8 * 250px);
+    height: calc(0.8 * 205px);
+  }
+  .polaroid4 {
+    padding: 8px;
+    width: calc(0.8 * 250px);
+    height: calc(0.8 * 285px);
+  }
 }
 
 /* Contact section */
