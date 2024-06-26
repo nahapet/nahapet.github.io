@@ -32,8 +32,13 @@ h3 {
   font-size: 20px;
 }
 .middle-content {
-  width: 70%;
+  width: 80%;
   max-width: 900px;
+}
+@media (max-width: 700px) {
+  .middle-content {
+    width: 85%;
+  }
 }
 .about,
 .experience,
@@ -325,7 +330,7 @@ h3 {
 /* Services section */
 
 .services {
-  background-color: rgb(26, 83, 212);
+  background: linear-gradient(135deg, #1e1e2f, #3d3d59, #222231);
 }
 .services h3 {
   margin: 0;
@@ -355,12 +360,16 @@ h3 {
   font-family: "Canela", serif;
 }
 @media (max-width: 525px) {
+  .services .service-grid {
+    margin-top: 20px;
+  }
   .services .polaroid-container {
     display: flex;
     justify-content: flex-start;
     margin-bottom: 20px;
   }
   .services .service-row {
+    margin-top: 30px;
     flex-direction: column-reverse;
   }
   .services .service-row-right {
@@ -368,9 +377,6 @@ h3 {
   }
   .services .service-row-right .polaroid-container {
     justify-content: flex-end;
-  }
-  .services .service-row-right .service-name {
-    text-align: right;
   }
   .services .service-description {
     padding: 0;

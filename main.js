@@ -12,6 +12,7 @@ function handleHero() {
 // Transition should happen from top of portrait to 100px from bottom
 function handlePortrait() {
   const windowHeight = window.innerHeight;
+  const windowWidth = window.innerWidth;
   const polaroids = document.querySelectorAll(".polaroid-container");
   polaroids.forEach((polaroid) => {
     polaroid.classList.contains("polaroid-right");
@@ -24,10 +25,10 @@ function handlePortrait() {
 
     const headshotRotate = invert * (6 - 8 * scrollPercent);
     const headshotScale = 1 + 0.1 * (1 - scrollPercent);
-    const headshotBlur = 5 * (1 - scrollPercent);
+    const headshotBlur = windowWidth < 700 ? 0 : 5 * (1 - scrollPercent);
     polaroid.style.transform = `rotate(${headshotRotate}deg) scale(${headshotScale})`;
     polaroid.style.filter = `blur(${headshotBlur}px)`;
-    polaroid.style.opacity = `${0.8 + 0.2 * scrollPercent}`;
+    polaroid.style.opacity = `${0.5 + 0.5 * scrollPercent}`;
   });
 }
 
@@ -35,6 +36,7 @@ function handlePortrait() {
 // Finish 100px before next section appears
 function handleMediaScroller() {
   const windowHeight = window.innerHeight;
+  const windowWidth = window.innerWidth;
   const topContent = document.querySelector(".top-content");
   const mediaHeader = document.querySelector(".media-coverage .header");
   const experience = document.querySelector(".experience");
@@ -56,7 +58,8 @@ function handleMediaScroller() {
   if (hidden) {
     mediaContainer.style.visibility = "hidden";
   } else {
-    mediaSection.style.filter = `blur(${(1 - scrollPercent) * 20}px)`;
+    const blur = windowWidth < 700 ? 0 : (1 - scrollPercent) * 20;
+    mediaSection.style.filter = `blur(${blur}px)`;
     mediaSection.style.opacity = `${scrollPercent}`;
     mediaContainer.style.visibility = "visible";
   }
@@ -86,6 +89,7 @@ function getRowVisibility(scrollPercent, num) {
 
 function handleExperience() {
   const windowHeight = window.innerHeight;
+  const windowWidth = window.innerWidth;
   const rect = document.querySelector(".experience").getBoundingClientRect();
   const scrollPercent = Math.max(
     0,
@@ -95,7 +99,8 @@ function handleExperience() {
   const rows = document.querySelectorAll(".timeline-row");
   const visibility = getRowVisibility(scrollPercent, rows.length);
   for (let i = 0; i < rows.length; i++) {
-    rows[i].style.filter = `blur(${(1 - visibility[i]) * 20}px)`;
+    const blur = windowWidth < 700 ? 0 : (1 - visibility[i]) * 20;
+    rows[i].style.filter = `blur(${blur}px)`;
     rows[i].style.opacity = `${visibility[i]}`;
   }
 }
