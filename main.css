@@ -384,6 +384,11 @@ h3 {
   .services .service-row-right .service-description {
     padding: 0;
   }
+  .polaroid1 {
+    padding: 8px;
+    width: calc(0.8 * 250px);
+    height: calc(0.8 * 330px);
+  }
   .polaroid2 {
     padding: 8px;
     width: calc(0.8 * 285px);
