@@ -110,6 +110,15 @@ function onScroll() {
   handlePortrait();
   handleMediaScroller();
   handleExperience();
+
+  // Close tooltips.
+  const tooltips = document.querySelectorAll(".tooltip");
+  tooltips.forEach((tooltip) => {
+    const tooltipText = tooltip.querySelector(".tooltiptext");
+    tooltipText.style.visibility = "hidden";
+    tooltipText.style.opacity = "0";
+    tooltipText.style.transform = "translateY(0)";
+  });
 }
 
 onScroll();
@@ -174,3 +183,22 @@ function addToScroller() {
 
 addToScroller();
 window.addEventListener("resize", addToScroller);
+
+function handleTooltips() {
+  const tooltips = document.querySelectorAll(".tooltip");
+  tooltips.forEach((tooltip) => {
+    const tooltipText = tooltip.querySelector(".tooltiptext");
+    tooltip.addEventListener("click", () => {
+      if (tooltipText.style.visibility === "visible") {
+        tooltipText.style.visibility = "hidden";
+        tooltipText.style.opacity = "0";
+        tooltipText.style.transform = "translateY(0)";
+      } else {
+        tooltipText.style.visibility = "visible";
+        tooltipText.style.opacity = "1";
+        tooltipText.style.transform = "translateY(-5px)";
+      }
+    });
+  });
+}
+handleTooltips();
