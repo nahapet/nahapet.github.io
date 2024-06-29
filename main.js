@@ -117,7 +117,7 @@ function onScroll() {
     const tooltipText = tooltip.querySelector(".tooltiptext");
     tooltipText.style.visibility = "hidden";
     tooltipText.style.opacity = "0";
-    tooltipText.style.transform = "translateY(0)";
+    tooltipText.style.transform = "translateY(0) translateX(-50%)";
   });
 }
 
@@ -192,11 +192,11 @@ function handleTooltips() {
       if (tooltipText.style.visibility === "visible") {
         tooltipText.style.visibility = "hidden";
         tooltipText.style.opacity = "0";
-        tooltipText.style.transform = "translateY(0)";
+        tooltipText.style.transform = "translateY(0) translateX(-50%)";
       } else {
         tooltipText.style.visibility = "visible";
         tooltipText.style.opacity = "1";
-        tooltipText.style.transform = "translateY(-5px)";
+        tooltipText.style.transform = "translateY(-5px) translateX(-50%)";
       }
     });
   });

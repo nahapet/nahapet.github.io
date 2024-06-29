@@ -182,11 +182,17 @@ h3 {
   position: relative;
   cursor: pointer;
 }
+@media (max-width: 525px) {
+  .tooltip {
+    border-bottom: 2px dashed rgba(0, 0, 0, 0.3);
+  }
+}
 .tooltip .tooltiptext {
   visibility: hidden;
   position: absolute;
   bottom: 125%;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s, transform 0.3s;
   color: #fff;
@@ -202,7 +208,7 @@ h3 {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
-  transform: translateY(-5px);
+  transform: translateY(-5px) translateX(-50%);
 }
 .info-icon {
   display: inline-block;
