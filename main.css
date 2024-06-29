@@ -391,9 +391,9 @@ h3 {
     padding: 0;
   }
   .polaroid1 {
-    padding: 8px;
-    width: calc(0.8 * 250px);
-    height: calc(0.8 * 330px);
+    padding: 6px;
+    width: calc(0.6 * 250px);
+    height: calc(0.6 * 330px);
   }
   .polaroid2 {
     padding: 8px;
@@ -412,6 +412,11 @@ h3 {
   }
 }
 @media (min-width: 526px) and (max-width: 700px) {
+  .polaroid1 {
+    padding: 8px;
+    width: calc(0.8 * 250px);
+    height: calc(0.8 * 330px);
+  }
   .polaroid2 {
     padding: 6px;
     width: calc(0.6 * 285px);
